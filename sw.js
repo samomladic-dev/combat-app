@@ -1,5 +1,5 @@
-// built by tools/pwa.ts, version 012bb6597a
-const C='app-012bb6597a',F='fonts-v1',FILES=["./","index.html","manifest.webmanifest","icons/icon-192.png","icons/icon-512.png","icons/maskable-512.png","icons/apple-touch-icon.png"];
+// built by tools/pwa.ts, version 5839fcea22
+const C='app-5839fcea22',F='fonts-v1',FILES=["./","index.html","manifest.webmanifest","icons/icon-192.png","icons/icon-512.png","icons/maskable-512.png","icons/apple-touch-icon.png"];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(FILES.map(f=>new Request(f,{cache:'reload'})))).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(n=>n!=C&&n!=F).map(n=>caches.delete(n)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{const q=e.request;if(q.method!='GET')return;const u=new URL(q.url);
